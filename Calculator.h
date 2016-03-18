@@ -16,7 +16,7 @@ Calculator(float budget){ //initializes calculator with budgetAmount = budget
   budgetAmount = budget;
 }
 void updateTotal(){ //updates the amount total by grabbing vector (?) from project class
-  for(int counter = 0; counter < Project:: carPart.size(); counter ++)
+  for(int counter = 0; counter < Project:: carParts.size(); counter ++)
   {
     total += Project::carParts[counter].price;
   }
