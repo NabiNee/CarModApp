@@ -1,7 +1,7 @@
 #include "Database.h"
 class MakeModel
 {
-private:
+protected:
 float price;
 Database * image;
 
