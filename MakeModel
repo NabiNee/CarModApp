@@ -1,9 +1,0 @@
-#include "Database.h"
-class MakeModel
-{
-protected:
-float price;
-
-public:
-MakeModel();
-};
