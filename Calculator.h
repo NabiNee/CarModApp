@@ -1,53 +1,31 @@
-const float TAX = 0.08;
-public class Calculator : Projects
+/*The calculator class contains the current total cost of the project. It has functions to calculate to the cost and tax,
+  to update based on the budget, and various get methods to grab the private data members.*/
+#ifndef CALCULATOR_H
+#define CALCULATOR_H
+
+#include "Project.h"
+#include "Make.h"
+#include "Parts.h"
+
+class Calculator
 {
 private:
-float total; //current total of the project
-float budgetAmount; //max amount of project cost
-float grandTotal; //includes tax and shipping
-float taxTotal; //the tax from the total
+    float total; //current total of the project
+    float budgetAmount; //max amount of project cost
+    float grandTotal; //includes tax
+    float taxTotal; //the tax from the total
 public:
-Calculator(){ //initilaizes everything to 0
-  total = 0;
-  budgetAmount = 0;
-}
-Calculator(float budget){ //initializes calculator with budgetAmount = budget
-  total = 0;
-  budgetAmount = budget;
-}
-void updateTotal(){ //updates the amount total by grabbing vector (?) from project class
-  for(int counter = 0; counter < Project:: carParts.size(); counter ++)
-  {
-    total += Project::carParts[counter].price;
-  }
-}
-void updateTaxTotal()
-{
-  taxTotal = total * TAX;
-}
-void calculateGrandTotal()
-{
-  grandTotal = (total * TAX) + total;
-}
-void updateBudget(){ // updating budget
-  budgetAmount = budgetAmount - total;
-}
-  float budget(){ //returns the budget in red if it's passed the budget amount
-      if (budgetAmount > 0){
-        return budgetAmount;
-      }
-        else{
-            return budgetAmount; //in some red color
-        }
-    }
-  }
-float getTotal{
-  return total;
-}
-float getTaxTotal{
-  return taxTotal;
-}
-float getGrandTotal{
-  return grandTotal;
-}
+    Calculator(); //initializes everything to 0
+    Calculator(float); //initilaizes calculator with a budget amount
+    void updateTotal(Make); //updates total by using the Make data memeber in project
+    void updateTaxTotal(); //calculates amount of tax
+    void calculateGrandTotal(); //calculates total plus tax
+    void updateBudget(); //Updates budget to show how much more can be spent
+    
+    //get methods
+    float getTotal();
+    float getTaxTotal();
+    float getGrandTotal();
 };
+
+#endif // CALCULATOR_H
