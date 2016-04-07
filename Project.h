@@ -5,6 +5,6 @@ Calculator calculator;
 Car car;
 
 public:
-Proect();
+Projects();
 User& saveProject(); //Saves project by returning updated user with project to the DB handler
 }
