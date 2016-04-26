@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Projects</class>
+ <widget class="QMainWindow" name="Projects">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>855</width>
+    <height>586</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>855</width>
+    <height>586</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>855</width>
+    <height>586</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="verticalLayoutWidget_9">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>100</y>
+      <width>141</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_9">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetDefaultConstraint</enum>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Chose Your Car&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item alignment="Qt::AlignHCenter">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Car Model</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="modelSelection">
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <property name="frame">
+              <bool>true</bool>
+             </property>
+             <item>
+              <property name="text">
+               <string>-Select Car Model-</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Honda Civic</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_2">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Select Year</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="yearSelection">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>-Select Year-</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>???</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Select Your Mods&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_3">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Lights</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="lightSelection">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>None</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Lights Mod 1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Lights Mod 2</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_5">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Hood</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="hoodSelection">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>None</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_4">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_4">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Wheels</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="wheelSelection">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>None</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Wheels Mod 1</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Wheels Mod 2</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <item alignment="Qt::AlignHCenter">
+          <widget class="QLabel" name="label_6">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Engine</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="engineSelection">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>None</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="calculatorLabel">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>520</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>Total Cost</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="calcDisplay">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>520</y>
+      <width>111</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+background-color:rgb(198, 198, 198);
+}</string>
+    </property>
+    <property name="text">
+     <string>0.00</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>855</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSave_Project"/>
+    <addaction name="actionLoad_Project"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <widget class="QMenu" name="menuCalculator">
+     <property name="title">
+      <string>Calculator</string>
+     </property>
+     <addaction name="actionInclude_Tax"/>
+    </widget>
+    <addaction name="menuCalculator"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuOptions"/>
+  </widget>
+  <action name="actionSave_Project">
+   <property name="text">
+    <string>Save Project</string>
+   </property>
+  </action>
+  <action name="actionLoad_Project">
+   <property name="text">
+    <string>Load Project</string>
+   </property>
+  </action>
+  <action name="actionInclude_Tax">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Include Tax</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
