@@ -25,7 +25,7 @@ public:
     void addWheel(QString);
     void addEngine(QString);
     void addHood(QString);
-    void addExhaust(QString);
+    void addSpoilers(QString);
     void addLights(QString);
 };
 
