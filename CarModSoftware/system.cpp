@@ -7,6 +7,13 @@ System::System(QWidget *parent) :
     ui(new Ui::System)
 {
     ui->setupUi(this);
+
+
+   if(!connOpen())
+       ui->status->setText("Failed to open the database");
+   else
+       ui->status->setText("Connected....");
+
     ui->loginError->setVisible(false);
 }
 
@@ -19,7 +26,7 @@ void System::on_buttonCreateAccount_clicked()
 {
     newAccount.exec();
     this->close();
-    project.show();
+
 }
 
 /*Grabs username and password inputted, then sends it to UserList to check if it exists. If they
@@ -27,17 +34,38 @@ void System::on_buttonCreateAccount_clicked()
 
 void System::on_buttonLogIn_clicked()
 {
-    QString userName, password;
-    bool unPwExist;
-    userName = ui->enterUN->text(); //grabs user name inputted
-    password = ui->enterPW->text(); //grabs password inputted
-    unPwExist = list.checkCredentials(userName.toStdString(),password.toStdString()); //.toStdString converts qString to string
-    if(unPwExist == false) //if username/password don't exist, show error message
-            ui->loginError->setVisible(true);
-    else
+    QString username, password;
+    username=ui->enterUN->text();
+    password=ui->enterPW->text();
+
+    if(!connOpen()){
+
+        qDebug()<<"Failed to open the database";
+        return;
+    }
+
+    connOpen();
+    QSqlQuery qry;
+    qry.prepare("select * from Users where username='"+username +"' and password='"+password +"'");
+
+    if(qry.exec())
     {
-        this->close();
-        project.show();
+        int count=0;
+        while(qry.next())
+        {
+            count++;
+        }
+        if(count==1){
+            ui->status->setText("Login Successful");
+            connClose();
+            project.show();
+            this->close();
+        }
+        if(count>1)
+            ui->status->setText("Username or Password already exsists");
+        if(count<1)
+            ui->status->setText("Invalid Username or Password");
+
     }
 }
 

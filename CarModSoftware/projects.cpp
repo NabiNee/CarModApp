@@ -5,7 +5,6 @@ Projects::Projects(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Projects)
 {
-    calculator = Calculator::Instance();
     includeTax = false;
     ui->setupUi(this);
 }
@@ -44,42 +43,41 @@ void Projects::on_actionInclude_Tax_triggered()
     if(ui->actionInclude_Tax->isChecked()) //case where option is selected
     {
         includeTax = true;
-        calculator->updateTaxTotal();
-        calculator->calculateGrandTotal();
-        ui->calcDisplay->setNum(calculator->getGrandTotal()); //refreshes calculator to display current total with tax
-        return;
+        calculator.updateTaxTotal();
+        calculator.calculateGrandTotal();
+        ui->calcDisplay->setNum(calculator.getGrandTotal()); //refreshes calculator to display current total with tax
     }
     else
         includeTax = false;
-        ui->calcDisplay->setNum(calculator->getTotal());
+        ui->calcDisplay->setNum(calculator.getTotal());
 }
 
 void Projects::on_lightSelection_activated(const QString &arg1)
 {
     carChosen.addLights(arg1); //sends light option to make to change object to appropriate object
-    calculator->updateTotal(carChosen);
+    calculator.updateTotal(carChosen);
     if(includeTax == true) //Will display total with taxes only if option is selected
     {
-        calculator->updateTaxTotal();
-        calculator->calculateGrandTotal();
-        ui->calcDisplay->setNum(calculator->getGrandTotal());
+        calculator.updateTaxTotal();
+        calculator.calculateGrandTotal();
+        ui->calcDisplay->setNum(calculator.getGrandTotal());
         return;
     }
-    ui->calcDisplay->setNum(calculator->getTotal());
+    ui->calcDisplay->setNum(calculator.getTotal());
 }
 
 void Projects::on_wheelSelection_activated(const QString &arg1)
 {
     carChosen.addWheel(arg1); //sends wheel option to make to change object to appropriate object
-    calculator->updateTotal(carChosen);
+    calculator.updateTotal(carChosen);
     if(includeTax == true) //Will display total with taxes only if option is selected
     {
-        calculator->updateTaxTotal();
-        calculator->calculateGrandTotal();
-        ui->calcDisplay->setNum(calculator->getGrandTotal());
+        calculator.updateTaxTotal();
+        calculator.calculateGrandTotal();
+        ui->calcDisplay->setNum(calculator.getGrandTotal());
         return;
     }
-    ui->calcDisplay->setNum(calculator->getTotal());
+    ui->calcDisplay->setNum(calculator.getTotal());
 }
 
 void Projects::enableSelections()

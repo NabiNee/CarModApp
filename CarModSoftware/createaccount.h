@@ -5,6 +5,7 @@
 
 #include <QDialog>
 #include "userlist.h"
+#include "projects.h"
 
 namespace Ui {
 class CreateAccount;
@@ -23,6 +24,7 @@ private slots:
 
 private:
     Ui::CreateAccount *ui;
+    Projects project;
 };
 
 #endif // CREATEACCOUNT_H

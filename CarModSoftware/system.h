@@ -3,6 +3,9 @@
 #define SYSTEM_H
 
 #include <QMainWindow>
+#include <QtSql>
+#include <QDebug>
+#include <QFileInfo>
 #include "userlist.h"
 #include "projects.h"
 #include "createaccount.h"
@@ -14,6 +17,32 @@ class System;
 class System : public QMainWindow
 {
     Q_OBJECT
+
+public:
+    QSqlDatabase mydb;
+
+    void connClose()
+    {
+        mydb.close();
+        mydb.removeDatabase(QSqlDatabase::defaultConnection);
+    }
+
+    bool connOpen()
+    {
+        mydb=QSqlDatabase::addDatabase("QSQLITE");
+       mydb.setDatabaseName("C:/Users/Lovey/Documents/Database/UserAccount.sqlite");
+
+       if(!mydb.open()){
+           qDebug()<<("Failed to open the database");
+           return false;
+       }
+
+       else{
+           qDebug()<<("Connected....");
+           return true;
+       }
+    }
+
 
 public:
     explicit System(QWidget *parent = 0);

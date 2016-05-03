@@ -1,5 +1,5 @@
-/* The calculator class is a singleton class that contains the current total cost of the project. It has functions to
- * calculate to the cost and tax, to update based on the budget, and various get methods to grab the private data members.*/
+/* The calculator class contains the current total cost of the project. It has functions to calculate to the cost and tax,
+   to update based on the budget, and various get methods to grab the private data members.*/
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
@@ -9,14 +9,13 @@
 class Calculator
 {
 private:
-    Calculator(); //initializes everything to 0
-    static Calculator* instance;
     float total; //current total of the project
     float budgetAmount; //max amount of project cost
     float grandTotal; //includes tax
     float taxTotal; //the tax from the total
 public:
-    static Calculator* Instance(); //creates an instance of Calculator
+    Calculator(); //initializes everything to 0
+    Calculator(float); //initilaizes calculator with a budget amount
     void updateTotal(Make); //updates total by using the Make data memeber in project
     void updateTaxTotal(); //calculates amount of tax
     void calculateGrandTotal(); //calculates total plus tax
@@ -28,4 +27,4 @@ public:
     float getGrandTotal();
 };
 
-#endif
+#endif // CALCULATOR_H

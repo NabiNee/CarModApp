@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/PartInfo">
+        <file>Parts.txt</file>
+    </qresource>
+</RCC>

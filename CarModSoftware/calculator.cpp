@@ -1,7 +1,6 @@
 #include "calculator.h"
 
 const float TAX = 0.08;
-Calculator* Calculator::instance = 0; //sets initial instance to 0, meaning there is no calculator created
 
 //Initiates all variables to 0
 Calculator::Calculator()
@@ -13,12 +12,13 @@ Calculator::Calculator()
 
 }
 
-//If there is no instance of calculator already, creates one and returns it. Otherwise, return the one already created.
-Calculator* Calculator::Instance()
+//Initializes budgetAmount to budget, everything else to 0
+Calculator::Calculator(float budget) //initializes calculator with budgetAmount = budget
 {
-    if(instance == 0)
-        instance = new Calculator();
-    return instance;
+    total = 0;
+    budgetAmount = budget;
+    grandTotal = 0;
+    taxTotal = 0;
 }
 
 /*Updates the amount total by calling the create list function from Make in order to get a vector.

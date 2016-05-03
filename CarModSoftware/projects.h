@@ -36,7 +36,7 @@ private slots:
 
 private:
     Ui::Projects *ui;
-    Calculator* calculator;
+    Calculator calculator;
     Make carChosen;
     bool includeTax;
 };

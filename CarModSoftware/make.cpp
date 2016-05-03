@@ -16,20 +16,15 @@ void Make::addWheel(QString partChosen)
         wheel.calculate(partChosen);
 }
 
-void Make::addEngine(QString partChosen)
+/*void Make::addEngine()
 {
-        engine.calculate(partChosen);
+        engine = new Parts;
 }
 
-void Make::addHood(QString partChosen)
+void Make::addHood()
 {
-        hood.calculate(partChosen);
-}
-
-void Make::addSpoilers(QString partChosen)
-{
-        spoilers.calculate(partChosen);
-}
+        hood = new Parts;
+}*/
 
 void Make::addLights(QString partChosen)
 {
@@ -43,7 +38,6 @@ const vector<Parts> Make::createList()
     partsList.push_back(wheel);
     partsList.push_back(engine);
     partsList.push_back(hood);
-    partsList.push_back(spoilers);
     partsList.push_back(lights);
     return partsList;
 }
