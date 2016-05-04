@@ -115,7 +115,7 @@
            </item>
            <item>
             <property name="text">
-             <string>???</string>
+             <string>2001</string>
             </property>
            </item>
           </widget>
@@ -204,6 +204,11 @@
              <string>None</string>
             </property>
            </item>
+           <item>
+            <property name="text">
+             <string>Hood Mod 1</string>
+            </property>
+           </item>
           </widget>
          </item>
         </layout>
@@ -264,6 +269,11 @@
            <item>
             <property name="text">
              <string>None</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Engine Mod 1</string>
             </property>
            </item>
           </widget>

@@ -16,15 +16,15 @@ void Make::addWheel(QString partChosen)
         wheel.calculate(partChosen);
 }
 
-/*void Make::addEngine()
+void Make::addEngine(QString partChosen)
 {
-        engine = new Parts;
+        engine.calculate(partChosen);
 }
 
-void Make::addHood()
+void Make::addHood(QString partChosen)
 {
-        hood = new Parts;
-}*/
+        hood.calculate(partChosen);
+}
 
 void Make::addLights(QString partChosen)
 {

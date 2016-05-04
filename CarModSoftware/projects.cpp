@@ -80,6 +80,34 @@ void Projects::on_wheelSelection_activated(const QString &arg1)
     ui->calcDisplay->setNum(calculator.getTotal());
 }
 
+void Projects::on_hoodSelection_activated(const QString &arg1)
+{
+    carChosen.addHood(arg1); //sends wheel option to make to change object to appropriate object
+    calculator.updateTotal(carChosen);
+    if(includeTax == true) //Will display total with taxes only if option is selected
+    {
+        calculator.updateTaxTotal();
+        calculator.calculateGrandTotal();
+        ui->calcDisplay->setNum(calculator.getGrandTotal());
+        return;
+    }
+    ui->calcDisplay->setNum(calculator.getTotal());
+}
+
+void Projects::on_engineSelection_activated(const QString &arg1)
+{
+    carChosen.addEngine(arg1); //sends wheel option to make to change object to appropriate object
+    calculator.updateTotal(carChosen);
+    if(includeTax == true) //Will display total with taxes only if option is selected
+    {
+        calculator.updateTaxTotal();
+        calculator.calculateGrandTotal();
+        ui->calcDisplay->setNum(calculator.getGrandTotal());
+        return;
+    }
+    ui->calcDisplay->setNum(calculator.getTotal());
+}
+
 void Projects::enableSelections()
 {
     ui->yearSelection->setEnabled(true);

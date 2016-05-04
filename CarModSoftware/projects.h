@@ -32,6 +32,10 @@ private slots:
 
     void on_wheelSelection_activated(const QString &arg1);
 
+    void on_hoodSelection_activated(const QString &arg1);
+
+    void on_engineSelection_activated(const QString &arg1);
+
     void on_actionInclude_Tax_triggered(); //menubar option to incclude tax in total price calculations
 
 private:
