@@ -7,6 +7,7 @@ CreateAccount::CreateAccount(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::CreateAccount)
 {
+    project = Projects::Instance();
     ui->setupUi(this);
 
    /* System conn;
@@ -47,7 +48,7 @@ void CreateAccount::on_pushButton_clicked()
     {
         QMessageBox::critical(this,tr("Save"),tr("Saved"));
         conn.connClose();
-        project.show();
+        project->show();
         this->close();
 
     }

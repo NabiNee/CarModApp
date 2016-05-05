@@ -2,4 +2,8 @@
     <qresource prefix="/PartInfo">
         <file>Parts.txt</file>
     </qresource>
+    <qresource prefix="/Photos">
+        <file>defaultcar.png</file>
+        <file>default2.png</file>
+    </qresource>
 </RCC>

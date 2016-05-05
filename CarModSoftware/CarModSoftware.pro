@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     createaccount.cpp \
     calculator.cpp \
     make.cpp \
-    parts.cpp
+    parts.cpp \
+    projectsnapshot.cpp
 
 HEADERS  += system.h \
     user.h \
@@ -29,11 +30,13 @@ HEADERS  += system.h \
     createaccount.h \
     calculator.h \
     make.h \
-    parts.h
+    parts.h \
+    projectsnapshot.h
 
 FORMS    += system.ui \
     projects.ui \
-    createaccount.ui
+    createaccount.ui \
+    projectsnapshot.ui
 
 RESOURCES += \
     resources.qrc \

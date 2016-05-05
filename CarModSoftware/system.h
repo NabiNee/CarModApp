@@ -19,35 +19,11 @@ class System : public QMainWindow
     Q_OBJECT
 
 public:
-    QSqlDatabase mydb;
-
-    void connClose()
-    {
-        mydb.close();
-        mydb.removeDatabase(QSqlDatabase::defaultConnection);
-    }
-
-    bool connOpen()
-    {
-        mydb=QSqlDatabase::addDatabase("QSQLITE");
-       mydb.setDatabaseName("C:/Users/Lovey/Documents/Database/UserAccount.sqlite");
-
-       if(!mydb.open()){
-           qDebug()<<("Failed to open the database");
-           return false;
-       }
-
-       else{
-           qDebug()<<("Connected....");
-           return true;
-       }
-    }
-
-
-public:
     explicit System(QWidget *parent = 0);
     ~System();
-
+    QSqlDatabase mydb;
+    void connClose();
+    bool connOpen();
 private slots:
     void on_buttonCreateAccount_clicked();
 
@@ -57,7 +33,7 @@ private slots:
 
 private:
     Ui::System *ui;
-    Projects project;
+    Projects* project;
     UserList list; //an object containg list of users; should be replaced with database
     CreateAccount newAccount;
 };

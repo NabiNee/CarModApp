@@ -7,7 +7,6 @@ Make::Make()
 
 Make::~Make()
 {
-
 }
 
 //Add methods

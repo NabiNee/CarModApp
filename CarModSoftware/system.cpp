@@ -6,6 +6,7 @@ System::System(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::System)
 {
+    project = Projects::Instance();
     ui->setupUi(this);
 
 
@@ -31,19 +32,18 @@ void System::on_buttonCreateAccount_clicked()
 
 /*Grabs username and password inputted, then sends it to UserList to check if it exists. If they
  * dont, it reveals error message;otherwise it goes to the next form. */
-
 void System::on_buttonLogIn_clicked()
 {
     QString username, password;
     username=ui->enterUN->text();
     password=ui->enterPW->text();
+    ui->loginError->setVisible(true);
 
     if(!connOpen()){
 
         qDebug()<<"Failed to open the database";
         return;
     }
-
     connOpen();
     QSqlQuery qry;
     qry.prepare("select * from Users where username='"+username +"' and password='"+password +"'");
@@ -58,7 +58,7 @@ void System::on_buttonLogIn_clicked()
         if(count==1){
             ui->status->setText("Login Successful");
             connClose();
-            project.show();
+            project->show();
             this->close();
         }
         if(count>1)
@@ -71,6 +71,27 @@ void System::on_buttonLogIn_clicked()
 
 void System::on_buttonSkip_clicked()
 {
-    project.show();
+    project->show();
     this->close();
+}
+
+void System::connClose()
+{
+    mydb.close();
+    mydb.removeDatabase(QSqlDatabase::defaultConnection);
+}
+bool System::connOpen()
+{
+    mydb=QSqlDatabase::addDatabase("QSQLITE");
+   mydb.setDatabaseName("C:/Users/Lovey/Documents/Database/UserAccount.sqlite");
+
+   if(!mydb.open()){
+       qDebug()<<("Failed to open the database");
+       return false;
+   }
+
+   else{
+       qDebug()<<("Connected....");
+       return true;
+   }
 }

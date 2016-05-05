@@ -9,13 +9,14 @@
 class Calculator
 {
 private:
+    Calculator(); //initializes everything to 0
+    static Calculator* instance;
     float total; //current total of the project
     float budgetAmount; //max amount of project cost
     float grandTotal; //includes tax
     float taxTotal; //the tax from the total
 public:
-    Calculator(); //initializes everything to 0
-    Calculator(float); //initilaizes calculator with a budget amount
+    static Calculator* Instance(); //creates an instance of Calculator
     void updateTotal(Make); //updates total by using the Make data memeber in project
     void updateTaxTotal(); //calculates amount of tax
     void calculateGrandTotal(); //calculates total plus tax

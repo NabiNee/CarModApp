@@ -7,6 +7,8 @@
 #include <iomanip>
 #include "calculator.h"
 #include "make.h"
+#include "projectsnapshot.h"
+
 using namespace std;
 
 namespace Ui {
@@ -18,7 +20,7 @@ class Projects : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Projects(QWidget *parent = 0);
+    static Projects* Instance();
     ~Projects();
     void enableSelections();
     void disableSelections();
@@ -38,9 +40,16 @@ private slots:
 
     void on_actionInclude_Tax_triggered(); //menubar option to incclude tax in total price calculations
 
+    void on_actionSet_Budget_triggered();
+
+    void on_finishButton_clicked();
+
 private:
+    explicit Projects(QWidget *parent = 0);
+    static Projects* instance;
     Ui::Projects *ui;
-    Calculator calculator;
+    Calculator* calculator;
+    ProjectSnapshot pSnapshot;
     Make carChosen;
     bool includeTax;
 };

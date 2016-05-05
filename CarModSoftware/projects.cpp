@@ -1,10 +1,20 @@
 #include "projects.h"
 #include "ui_projects.h"
 
+Projects* Projects::instance = 0;
+
+Projects* Projects::Instance()
+{
+    if(instance == 0)
+        instance = new Projects();
+    return instance;
+}
+
 Projects::Projects(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Projects)
 {
+    calculator = Calculator::Instance();
     includeTax = false;
     ui->setupUi(this);
 }
@@ -36,76 +46,60 @@ void Projects::on_yearSelection_activated(const QString &arg1)
         enableSelections();
 }
 
-/* If option to show taxes is selected, will initialze project's, includeTax variable to true to
- * insure that the calcualtor always displays total with tax.*/
-void Projects::on_actionInclude_Tax_triggered()
-{
-    if(ui->actionInclude_Tax->isChecked()) //case where option is selected
-    {
-        includeTax = true;
-        calculator.updateTaxTotal();
-        calculator.calculateGrandTotal();
-        ui->calcDisplay->setNum(calculator.getGrandTotal()); //refreshes calculator to display current total with tax
-    }
-    else
-        includeTax = false;
-        ui->calcDisplay->setNum(calculator.getTotal());
-}
-
 void Projects::on_lightSelection_activated(const QString &arg1)
 {
     carChosen.addLights(arg1); //sends light option to make to change object to appropriate object
-    calculator.updateTotal(carChosen);
+    calculator->updateTotal(carChosen);
     if(includeTax == true) //Will display total with taxes only if option is selected
     {
-        calculator.updateTaxTotal();
-        calculator.calculateGrandTotal();
-        ui->calcDisplay->setNum(calculator.getGrandTotal());
+        calculator->updateTaxTotal();
+        calculator->calculateGrandTotal();
+        ui->calcDisplay->setNum(calculator->getGrandTotal());
         return;
     }
-    ui->calcDisplay->setNum(calculator.getTotal());
+    ui->calcDisplay->setNum(calculator->getTotal());
 }
 
 void Projects::on_wheelSelection_activated(const QString &arg1)
 {
     carChosen.addWheel(arg1); //sends wheel option to make to change object to appropriate object
-    calculator.updateTotal(carChosen);
+    calculator->updateTotal(carChosen);
     if(includeTax == true) //Will display total with taxes only if option is selected
     {
-        calculator.updateTaxTotal();
-        calculator.calculateGrandTotal();
-        ui->calcDisplay->setNum(calculator.getGrandTotal());
+        calculator->updateTaxTotal();
+        calculator->calculateGrandTotal();
+        ui->calcDisplay->setNum(calculator->getGrandTotal());
         return;
     }
-    ui->calcDisplay->setNum(calculator.getTotal());
+    ui->calcDisplay->setNum(calculator->getTotal());
 }
 
 void Projects::on_hoodSelection_activated(const QString &arg1)
 {
     carChosen.addHood(arg1); //sends wheel option to make to change object to appropriate object
-    calculator.updateTotal(carChosen);
+    calculator->updateTotal(carChosen);
     if(includeTax == true) //Will display total with taxes only if option is selected
     {
-        calculator.updateTaxTotal();
-        calculator.calculateGrandTotal();
-        ui->calcDisplay->setNum(calculator.getGrandTotal());
+        calculator->updateTaxTotal();
+        calculator->calculateGrandTotal();
+        ui->calcDisplay->setNum(calculator->getGrandTotal());
         return;
     }
-    ui->calcDisplay->setNum(calculator.getTotal());
+    ui->calcDisplay->setNum(calculator->getTotal());
 }
 
 void Projects::on_engineSelection_activated(const QString &arg1)
 {
     carChosen.addEngine(arg1); //sends wheel option to make to change object to appropriate object
-    calculator.updateTotal(carChosen);
+    calculator->updateTotal(carChosen);
     if(includeTax == true) //Will display total with taxes only if option is selected
     {
-        calculator.updateTaxTotal();
-        calculator.calculateGrandTotal();
-        ui->calcDisplay->setNum(calculator.getGrandTotal());
+        calculator->updateTaxTotal();
+        calculator->calculateGrandTotal();
+        ui->calcDisplay->setNum(calculator->getGrandTotal());
         return;
     }
-    ui->calcDisplay->setNum(calculator.getTotal());
+    ui->calcDisplay->setNum(calculator->getTotal());
 }
 
 void Projects::enableSelections()
@@ -134,4 +128,38 @@ void Projects::disableSelections()
     ui->label_5->setEnabled(false);
     ui->engineSelection->setEnabled(false);
     ui->label_6->setEnabled(false);
+}
+
+/* If option to show taxes is selected, will initialze project's includeTax variable to true to
+ * insure that the calcualtor always displays total with tax.*/
+void Projects::on_actionInclude_Tax_triggered()
+{
+    if(ui->actionInclude_Tax->isChecked()) //case where option is selected
+    {
+        includeTax = true;
+        calculator->updateTaxTotal();
+        calculator->calculateGrandTotal();
+        ui->calcDisplay->setNum(calculator->getGrandTotal()); //refreshes calculator to display current total with tax
+    }
+    else
+    {
+        includeTax = false;
+        ui->calcDisplay->setNum(calculator->getTotal());
+    }
+}
+
+/* Sets the project to calculate budget.*/
+void Projects::on_actionSet_Budget_triggered()
+{
+    //Do something
+}
+
+/* Sends relevant data to pSnapshot, then runs it. Changing it to where to data.txt adds name to part object will make this much
+ * easier since we could just send entire make object.*/
+void Projects::on_finishButton_clicked()
+{
+    QString car = ui->yearSelection->currentText() + " " + ui->modelSelection->currentText();
+    pSnapshot.passData(car,ui->lightSelection->currentText(),ui->wheelSelection->currentText(),ui->hoodSelection->currentText(),
+                       ui->engineSelection->currentText(),ui->calcDisplay->text().toFloat());
+    pSnapshot.exec();
 }

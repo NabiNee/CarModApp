@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>743</width>
-    <height>531</height>
+    <width>740</width>
+    <height>530</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>740</width>
+    <height>530</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>740</width>
+    <height>530</height>
+   </size>
   </property>
   <property name="focusPolicy">
    <enum>Qt::NoFocus</enum>
@@ -17,7 +29,16 @@
    <string>Log In</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">QMainWindow{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(5, 5, 5, 255), stop:1 rgba(144, 147, 134, 255));
+}
+
+QLineEdit{
+background-color: rgb(182, 182, 182);
+border:none;
+color: black;
+}
+</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QWidget" name="layoutWidget">
@@ -109,7 +130,7 @@
      </font>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ce0000;&quot;&gt;Error. User Name or Password don't exist.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#dddddd;&quot;&gt;Error. User Name or Password don't exist.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
@@ -117,7 +138,7 @@
      <rect>
       <x>290</x>
       <y>350</y>
-      <width>158</width>
+      <width>176</width>
       <height>31</height>
      </rect>
     </property>
@@ -156,7 +177,7 @@
       <x>460</x>
       <y>10</y>
       <width>261</width>
-      <height>26</height>
+      <height>28</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -217,13 +238,6 @@ background-color:rgb(240, 240, 240);
      <string>[+]Status</string>
     </property>
    </widget>
-   <zorder>layoutWidget</zorder>
-   <zorder>loginError</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>layoutWidget</zorder>
-   <zorder>buttonSkip</zorder>
-   <zorder>buttonLogIn</zorder>
-   <zorder>status</zorder>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QMenuBar" name="menuBar">
@@ -234,7 +248,7 @@ background-color:rgb(240, 240, 240);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>743</width>
+     <width>740</width>
      <height>21</height>
     </rect>
    </property>
