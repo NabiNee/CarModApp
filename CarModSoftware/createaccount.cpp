@@ -54,7 +54,7 @@ void CreateAccount::on_pushButton_clicked()
     }
     else
     {
-         QMessageBox::critical(this,tr("error::"),qry.lastError().text());
+         QMessageBox::critical(this,tr("Error::"),qry.lastError().text());
     }
 
 

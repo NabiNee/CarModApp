@@ -6,4 +6,9 @@
         <file>defaultcar.png</file>
         <file>default2.png</file>
     </qresource>
+    <qresource prefix="/CarPhotos">
+        <file>Honda Civic si 2006.JPG</file>
+        <file>Honda Civic si Hood mod.JPG</file>
+        <file>Honda Civic si light mod.JPG</file>
+    </qresource>
 </RCC>

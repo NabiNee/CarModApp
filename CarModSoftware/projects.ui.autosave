@@ -178,11 +178,6 @@ background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgb
              <string>Lights Mod 1</string>
             </property>
            </item>
-           <item>
-            <property name="text">
-             <string>Lights Mod 2</string>
-            </property>
-           </item>
           </widget>
          </item>
         </layout>

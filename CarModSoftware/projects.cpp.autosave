@@ -105,6 +105,8 @@ void Projects::on_engineSelection_activated(const QString &arg1)
     ui->calcDisplay->setNum(calculator->getTotal());
 }
 
+
+
 void Projects::enableSelections()
 {
     ui->yearSelection->setEnabled(true);
@@ -165,4 +167,9 @@ void Projects::on_finishButton_clicked()
     pSnapshot.passData(car,ui->lightSelection->currentText(),ui->wheelSelection->currentText(),ui->hoodSelection->currentText(),
                        ui->engineSelection->currentText(),ui->calcDisplay->text().toFloat());
     pSnapshot.exec();
+}
+
+void Projects::on_label_9_linkActivated(const QString &link)
+{
+    
 }
