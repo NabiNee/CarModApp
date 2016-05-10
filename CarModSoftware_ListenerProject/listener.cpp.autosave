@@ -1,0 +1,35 @@
+#include <listener.h>
+Listener()
+{
+    
+}
+
+~listener()
+{
+    
+}
+
+void calculateEvent()
+{
+    // get the make form the containor
+    calculator.updateTotal(carChosen);
+    ui->calcDisplay->setNum(calculator.getTotal());
+
+    leaveEvent();
+}
+
+void calculateTaxEvent()
+{
+    calculator.updateTotal(getMake());
+
+    calculator.updateTaxTotal();
+    calculator.calculateGrandTotal();
+    ui->calcDisplay->setNum(calculator.getGrandTotal());
+
+    leaveEvent();
+}
+
+void leaveEvent(QEvent *event)
+{
+    // clear the event
+}
