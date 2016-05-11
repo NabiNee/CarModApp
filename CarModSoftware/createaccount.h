@@ -1,11 +1,10 @@
-/* This class allows the user to create a new user by collecting the inputted information and entering it into the database. It checks first to see
- * that the desired username isn't already used.*/
+/* This class allows the user to create a new user by collecting the inputted information and entering it into the database. It checks first to
+ * see that the desired username isn't already used.*/
 #ifndef CREATEACCOUNT_H
 #define CREATEACCOUNT_H
 
 #include <QDialog>
-#include "userlist.h"
-#include "projects.h"
+#include <QMessageBox>
 
 namespace Ui {
 class CreateAccount;
@@ -20,11 +19,11 @@ public:
     ~CreateAccount();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_okButton_clicked();
+    void on_cancelButton_clicked();
 
 private:
     Ui::CreateAccount *ui;
-    Projects* project;
 };
 
 #endif // CREATEACCOUNT_H

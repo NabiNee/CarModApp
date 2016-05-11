@@ -147,7 +147,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgb
        <item>
         <widget class="QLabel" name="label_8">
          <property name="text">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Select Your Mods&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt;Select Your Mods&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
         </widget>
        </item>
@@ -159,7 +159,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgb
             <bool>false</bool>
            </property>
            <property name="text">
-            <string>Lights</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Lights&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -195,7 +195,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgb
             <bool>false</bool>
            </property>
            <property name="text">
-            <string>Hood</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Hood&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -226,7 +226,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgb
             <bool>false</bool>
            </property>
            <property name="text">
-            <string>Wheels</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Wheels&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -262,7 +262,7 @@ background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgb
             <bool>false</bool>
            </property>
            <property name="text">
-            <string>Engine</string>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ffffff;&quot;&gt;Engine&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -346,6 +346,9 @@ background-color:rgb(198, 198, 198);
     </property>
    </widget>
    <widget class="QPushButton" name="finishButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>380</x>
@@ -358,7 +361,7 @@ background-color:rgb(198, 198, 198);
      <string>Finish</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_9">
+   <widget class="QLabel" name="baseLayer">
     <property name="geometry">
      <rect>
       <x>220</x>
@@ -377,6 +380,82 @@ background-color:rgb(198, 198, 198);
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QLabel" name="logo">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>10</y>
+      <width>411</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="resources.qrc">:/Photos/carmodz.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="hoodLayer">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>130</y>
+      <width>600</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lightsLayer">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>130</y>
+      <width>600</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="wheelLayer">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>130</y>
+      <width>600</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>verticalLayoutWidget_9</zorder>
+   <zorder>calculatorLabel</zorder>
+   <zorder>calcDisplay</zorder>
+   <zorder>finishButton</zorder>
+   <zorder>baseLayer</zorder>
+   <zorder>logo</zorder>
+   <zorder>lightsLayer</zorder>
+   <zorder>wheelLayer</zorder>
+   <zorder>hoodLayer</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

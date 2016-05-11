@@ -2,14 +2,13 @@
 
 Make::Make()
 {
-
 }
 
 Make::~Make()
 {
 }
 
-//Add methods
+//Add methods. They send part name to Parts class to set each Part object's price.
 void Make::addWheel(QString partChosen)
 {
         wheel.calculate(partChosen);

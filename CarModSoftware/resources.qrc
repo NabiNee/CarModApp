@@ -4,11 +4,14 @@
     </qresource>
     <qresource prefix="/Photos">
         <file>defaultcar.png</file>
-        <file>default2.png</file>
+        <file>carmodz.png</file>
     </qresource>
     <qresource prefix="/CarPhotos">
-        <file>Honda Civic si 2006.JPG</file>
-        <file>Honda Civic si Hood mod.JPG</file>
-        <file>Honda Civic si light mod.JPG</file>
+        <file>honda civic si 2006.png</file>
+        <file>hood mod 1.png</file>
+        <file>light mod 1.png</file>
+        <file>wheel mod 1.png</file>
+        <file>light mod 2.png</file>
+        <file>wheel mod 2.png</file>
     </qresource>
 </RCC>

@@ -1,5 +1,5 @@
-/* The calculator class contains the current total cost of the project. It has functions to calculate to the cost and tax,
-   to update based on the budget, and various get methods to grab the private data members.*/
+/* The calculator class contains the current total cost of the project. It has functions to calculate the cost and tax,
+   to update based on a budget, and various get methods to grab the private data members.*/
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 

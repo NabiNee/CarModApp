@@ -1,6 +1,5 @@
 #include "system.h"
 #include "ui_system.h"
-#include <QString>
 
 System::System(QWidget *parent) :
     QMainWindow(parent),
@@ -26,8 +25,6 @@ System::~System()
 void System::on_buttonCreateAccount_clicked()
 {
     newAccount.exec();
-    this->close();
-
 }
 
 /*Grabs username and password inputted, then sends it to UserList to check if it exists. If they

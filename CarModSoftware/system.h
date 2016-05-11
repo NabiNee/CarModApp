@@ -6,7 +6,7 @@
 #include <QtSql>
 #include <QDebug>
 #include <QFileInfo>
-#include "userlist.h"
+#include <QString>
 #include "projects.h"
 #include "createaccount.h"
 
@@ -34,7 +34,6 @@ private slots:
 private:
     Ui::System *ui;
     Projects* project;
-    UserList list; //an object containg list of users; should be replaced with database
     CreateAccount newAccount;
 };
 

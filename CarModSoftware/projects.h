@@ -24,6 +24,7 @@ public:
     ~Projects();
     void enableSelections();
     void disableSelections();
+    void setPhoto(int); //display the appropriate photos
 
 private slots:
     void on_modelSelection_activated(const QString &arg1);
@@ -38,7 +39,7 @@ private slots:
 
     void on_engineSelection_activated(const QString &arg1);
 
-    void on_actionInclude_Tax_triggered(); //menubar option to incclude tax in total price calculations
+    void on_actionInclude_Tax_triggered(); //menubar option to include tax in total price calculations
 
     void on_actionSet_Budget_triggered();
 
@@ -51,7 +52,13 @@ private:
     Calculator* calculator;
     ProjectSnapshot pSnapshot;
     Make carChosen;
-    bool includeTax;
+    bool includeTax; //If set to true, it calculates price with taxes. Default set to false
+
+    //Store individual photos of car and mods selected
+    QPixmap car;
+    QPixmap lights;
+    QPixmap hood;
+    QPixmap wheel;
 };
 
 #endif // PROJECTS_H

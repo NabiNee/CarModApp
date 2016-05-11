@@ -14,8 +14,6 @@ CONFIG += c++11
 
 SOURCES += main.cpp\
         system.cpp \
-    user.cpp \
-    userlist.cpp \
     projects.cpp \
     createaccount.cpp \
     calculator.cpp \
@@ -24,8 +22,6 @@ SOURCES += main.cpp\
     projectsnapshot.cpp
 
 HEADERS  += system.h \
-    user.h \
-    userlist.h \
     projects.h \
     createaccount.h \
     calculator.h \
